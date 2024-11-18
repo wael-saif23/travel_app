@@ -2,7 +2,8 @@
 
 
 ## :memo: System design
-![travel app system design](https://github.com/user-attachments/assets/0c57bada-3dfe-4c61-be61-89d5eb98d749)
+![travel app system design  mod](https://github.com/user-attachments/assets/3b8ad47b-eb8c-4f3e-9dcf-49719b18b2c3)
+
 
 
 
