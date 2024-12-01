@@ -6,7 +6,14 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return  Scaffold(
+      appBar: AppBar(
+        title: Text('Splash Screen'),
+      ),
+      body: Center(
+        child: Text('Splash Screen'),
+      )
+    );
 
     // BlocProvider(
     //   create: (context) => SplashCubit()..gitInitialRoute(context),
