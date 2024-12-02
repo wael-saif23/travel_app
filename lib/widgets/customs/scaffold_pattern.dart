@@ -11,7 +11,7 @@ class ScaffoldPattern extends StatelessWidget {
     super.key,
     required this.child,
     this.isLoading = false,
-    this.backPatternPath = KAppPngs.defaultBG,
+    this.backPatternPath = KAppSvgs.defaultBG,
     this.backgroundColor = Colors.transparent,
     this.appBarBackgroundColor = Colors.white,
     this.statusBarIsLight = true,

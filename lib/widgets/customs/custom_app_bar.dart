@@ -94,7 +94,7 @@ class DefaultAppBar extends StatelessWidget {
                               ),
                             ),
                           )
-                        : Image.asset(KAppPngs.appbarLogo),
+                        : Image.asset(KAppSvgs.splashLogo),
                   ),
                 ),
                 Row(
