@@ -1,5 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:travel_app/core/extension/context_extensions.dart';
+import 'package:travel_app/routes/k_routes.dart';
+
 import '../../../data/data.dart';
 import '../../../core/utils/location_utils.dart';
 
@@ -8,12 +12,21 @@ part 'splash_state.dart';
 class SplashCubit extends Cubit<SplashState> {
   SplashCubit() : super(SplashInitial());
 
+  void setSplashAnimation({required BuildContext context}) {
+    emit(SplashAnimationState());
+    Future.delayed(const Duration(milliseconds: 0), () async {
+      Future.delayed(const Duration(milliseconds: 2500),
+          () => Navigator.of(context).pushReplacementNamed(KAppRoutes.login));
+      emit(SplashAnimatioFinishedState());
+    });
+  }
+
   void gitInitialRoute(BuildContext context) async {
     await LocationUtil.checkPermissionAndGetCurrentLatLng();
-
     if (await AppSession.getFirstInstall()) {
-      Future.delayed(const Duration(seconds: 1), () async {
-        // Future.delayed(const Duration(seconds: 1), () => context.navReplaceNamedTo(KAppRoutes.login));
+      Future.delayed(const Duration(seconds: 3), () async {
+        Future.delayed(const Duration(seconds: 3),
+            () => context.navReplaceNamedTo(KAppRoutes.login));
       });
       AppSession.setFirstInstall(false);
     } else {
@@ -32,7 +45,8 @@ class SplashCubit extends Cubit<SplashState> {
     }
   }
 
-  Future<void> refreshAccessToken({Function()? onSuccess, Function()? onError}) async {
+  Future<void> refreshAccessToken(
+      {Function()? onSuccess, Function()? onError}) async {
     //   emit(LoadingState());
     //   try {
     //     final result = await Repository.instance.refreshAccessToken(

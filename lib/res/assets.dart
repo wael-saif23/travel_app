@@ -22,9 +22,15 @@ class KAppPngs {
 
   // *Splash
   static const String splashBG = 'assets/images/png/Splash_Screen_3.png';
-static const String splashLogo = 'assets/images/png/logo_rehlati.png';
-
+  static const String splashLogo = 'assets/images/png/logo_rehlati.png';
+  // *spices of the logo
+  static const String logoPiece1 = 'assets/images/png/logo_slice_1.png';
+  static const String logoPiece2 = 'assets/images/png/logo_slice_2.png';
+  static const String logoPiece3 = 'assets/images/png/logo_slice_3.png';
+  static const String logoPiece4 = 'assets/images/png/logo_slice_4.png';
+  static const String logoPiece5 = 'assets/images/png/logo_slice_5.png';
+  static const String logoPiece6 = 'assets/images/png/logo_slice_6.png';
   // * AppBar
- 
+
   static const String noInternet = 'assets/images/png/no_internet.jpg';
 }
