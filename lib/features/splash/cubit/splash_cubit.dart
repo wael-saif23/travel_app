@@ -17,33 +17,33 @@ class SplashCubit extends Cubit<SplashState> {
     Future.delayed(const Duration(milliseconds: 0), () async {
       Future.delayed(const Duration(milliseconds: 2500),
           () => Navigator.of(context).pushReplacementNamed(KAppRoutes.login));
-      emit(SplashAnimatioFinishedState());
+      // emit(SplashAnimatioFinishedState());
     });
   }
 
-  void gitInitialRoute(BuildContext context) async {
-    await LocationUtil.checkPermissionAndGetCurrentLatLng();
-    if (await AppSession.getFirstInstall()) {
-      Future.delayed(const Duration(seconds: 3), () async {
-        Future.delayed(const Duration(seconds: 3),
-            () => context.navReplaceNamedTo(KAppRoutes.login));
-      });
-      AppSession.setFirstInstall(false);
-    } else {
-      Future.delayed(const Duration(seconds: 1), () async {
-        // context.navReplaceNamedTo(KAppRoutes.login);
+  // void gitInitialRoute(BuildContext context) async {
+  //   await LocationUtil.checkPermissionAndGetCurrentLatLng();
+  //   if (await AppSession.getFirstInstall()) {
+  //     Future.delayed(const Duration(seconds: 3), () async {
+  //       Future.delayed(const Duration(seconds: 3),
+  //           () => context.navReplaceNamedTo(KAppRoutes.login));
+  //     });
+  //     AppSession.setFirstInstall(false);
+  //   } else {
+  //     Future.delayed(const Duration(seconds: 1), () async {
+  //       // context.navReplaceNamedTo(KAppRoutes.login);
 
-        // await refreshAccessToken(
-        //   onSuccess: () {
-        //     context.navReplaceNamedTo(KAppRoutes.btnNavPage);
-        //   },
-        //   onError: () {
-        //     context.navReplaceNamedTo(KAppRoutes.btnNavPage);
-        //   },
-        // );
-      });
-    }
-  }
+  //       // await refreshAccessToken(
+  //       //   onSuccess: () {
+  //       //     context.navReplaceNamedTo(KAppRoutes.btnNavPage);
+  //       //   },
+  //       //   onError: () {
+  //       //     context.navReplaceNamedTo(KAppRoutes.btnNavPage);
+  //       //   },
+  //       // );
+  //     });
+  //   }
+  // }
 
   Future<void> refreshAccessToken(
       {Function()? onSuccess, Function()? onError}) async {

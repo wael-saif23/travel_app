@@ -16,11 +16,12 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SplashCubit()..gitInitialRoute(context),
+      create: (context) => SplashCubit(),
       child: BlocConsumer<SplashCubit, SplashState>(
         listener: (context, state) {},
         builder: (context, state) {
           return ScaffoldPattern(
+            backgroundColor: Colors.black45.withOpacity(.4),
             backPatternPath: KAppPngs.splashBG,
             child: Stack(
               children: [

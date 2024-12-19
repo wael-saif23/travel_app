@@ -13,8 +13,8 @@ class LoginScreen extends StatelessWidget {
       child: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {},
         builder: (context, state) {
-          // TODO : complete the login screen
-          return const Placeholder();
+          
+          return const Scaffold();
         },
       ),
     );
