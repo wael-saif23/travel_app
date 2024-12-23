@@ -1,3 +1,13 @@
 {
-  "all_rights_reserved": "All Rights Reserved"
+  "all_rights_reserved": "All Rights Reserved",
+  "Sign_in_now" : "Sign in now",
+  "Please_sign_in_to_continue_our_app" : "Please sign in to continue our app",
+  "Your_email" : "Your email",
+  "Min. 8 characters" : "Min. 8 characters",
+  "Forget_Password" : "Forget Password?",
+  "Sign_In" : "Sign In",
+  "Sign_Up" : "Sign Up",
+  "Or_with_email" : "Or with email",
+  "Don’t_have_an_account?" : "Don’t have an account?",
+  "Skip" : "Skip"
 }

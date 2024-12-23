@@ -204,6 +204,12 @@ static TextStyle interMedium14 = TextStyle(
   fontWeight: FontWeight.w500, // Medium
 );
 
+static TextStyle interBold16 = TextStyle(
+  fontSize: 16.sp,
+  fontFamily: "Inter",
+  fontWeight: FontWeight.w700, // Bold
+);
+
 static TextStyle interSemiBold16 = TextStyle(
   fontSize: 16.sp,
   fontFamily: "Inter",

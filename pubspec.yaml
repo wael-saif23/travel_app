@@ -177,7 +177,9 @@ flutter:
         - asset: assets/fonts/Inter/Inter_18pt-Medium.ttf
           weight: 500
         - asset: assets/fonts/Inter/Inter_18pt-Regular.ttf
-          weight: 400    
+          weight: 400 
+        - asset: assets/fonts/Inter/Inter_18pt-Bold.ttf
+          weight: 700   
     - family: Emblema One
       fonts:
         - asset: assets/fonts/emblema_one/EmblemaOne-Regular.ttf

@@ -35,6 +35,7 @@ class ScaffoldPattern extends StatelessWidget {
           color: Colors.white,
           image: DecorationImage(
             image: AssetImage(backPatternPath),
+            scale: MediaQuery.of(context).size.width / 1000,
             fit: BoxFit.fill,
             alignment: Alignment.center,
           ),

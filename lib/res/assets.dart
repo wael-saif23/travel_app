@@ -15,6 +15,17 @@ class KAppSvgs {
   static const String notificationIcon = 'assets/icons/bell.svg';
   // * Common
   static const String defaultBG = 'assets/images/svg/defutBG.svg';
+
+  // *auth
+
+  static const String emailIcon = 'assets/images/svg/email_icon.svg';
+ static const String eyeSlashIcon = 'assets/images/svg/eye_slash.svg';
+ static const String googleIcon = 'assets/images/svg/google_icon.svg';
+ static const String passwordIcon = 'assets/images/svg/password_icon.svg';
+ static const String appleIcon = 'assets/images/svg/apple_icon.svg';
+
+
+
 }
 
 class KAppPngs {

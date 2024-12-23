@@ -15,25 +15,15 @@ import '../app.dart';
 
 import 'res/app_size.dart';
 
-// void main(List<String> args) {
-//   runApp(const MyApp());
-// }
 
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
+// Changes that have been completed:
+// - add families fonts in pubspec.yaml file
+// - add fonts in assets font files
+// - add all text styles in app text style file
+// - start login view UI
+// - create auth head text widget for UI in login and signup views
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return
-//     MaterialApp(
-//         debugShowCheckedModeBanner: false,
-//         home: Scaffold(
-//           appBar: AppBar(
-//             title: const Text('Travel App'),
-//           ),
-//         ));
-//   }
-// }
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
