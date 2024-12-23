@@ -22,7 +22,14 @@ import 'res/app_size.dart';
 // - add all text styles in app text style file
 // - start login view UI
 // - create auth head text widget for UI in login and signup views
-
+// - add inter bold text style
+// - add svg icon to assets file
+// - add some app color to app color file
+// - * create have or not account widget
+// - * create or social sign widget
+// - * make some edit in custom button
+// - * create custom text form field widget
+// - * create social login button widget
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
