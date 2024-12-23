@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app/widgets/auth/login_view_body.dart';
+import 'package:travel_app/widgets/customs/scaffold_pattern.dart';
 
 import '../cubit/login_cubit.dart';
 
@@ -14,7 +16,10 @@ class LoginScreen extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           
-          return const Scaffold();
+          return  ScaffoldPattern(
+            child:LoginViewBody() ,
+            
+          );
         },
       ),
     );
