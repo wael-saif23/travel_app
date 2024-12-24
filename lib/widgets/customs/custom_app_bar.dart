@@ -75,7 +75,7 @@ class DefaultAppBar extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsetsDirectional.symmetric(
-              horizontal: 20.w,
+              horizontal:0,
             ),
             child: Stack(
               alignment: AlignmentDirectional.center,
@@ -94,7 +94,7 @@ class DefaultAppBar extends StatelessWidget {
                               ),
                             ),
                           )
-                        : Image.asset(KAppSvgs.splashLogo),
+                        : SvgPicture.asset(KAppSvgs.splashLogo),
                   ),
                 ),
                 Row(
@@ -112,7 +112,7 @@ class DefaultAppBar extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsets.symmetric(vertical: 5.h),
                               child: SizedBox(
-                                width: 26.r,
+                                width: 40.r,
                                 child: SvgPicture.asset(
                                   (KAppKeys.langKey == 'ar') ? KAppSvgs.backArIcon : KAppSvgs.backEnIcon,
                                 ),
@@ -128,7 +128,7 @@ class DefaultAppBar extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 5.h),
                           child: SizedBox(
                             width: 22.w,
-                            child: SvgPicture.asset(KAppSvgs.notificationIcon),
+                            child: Icon(Icons.alarm),
                           ),
                         ),
                       ),

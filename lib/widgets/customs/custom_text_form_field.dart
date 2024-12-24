@@ -15,11 +15,11 @@ class CustomTextFormField extends StatelessWidget {
     this.errorBorderColorCode,
     this.errorBorderWidht,
     required this.hintText,
-    required this.prefixIconName,
+    this.prefixIconName,
     this.backgroundFillColor,
     this.suffixIconName,
     this.onSuffixIconPressed,
-    this.obscureText,
+    this.obscureText, this.textAlign,
   });
 
   final int? borderColorCode;
@@ -40,9 +40,11 @@ class CustomTextFormField extends StatelessWidget {
   final Color? backgroundFillColor;
   final VoidCallback? onSuffixIconPressed;
   final bool? obscureText;
+  final TextAlign? textAlign;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textAlign: textAlign ?? TextAlign.start,
       obscureText: obscureText ?? false,
       decoration: InputDecoration(
         prefixIcon: prefixIconName != null
@@ -68,9 +70,14 @@ class CustomTextFormField extends StatelessWidget {
         hintStyle: KAppTextStyle.interSemiBold16.copyWith(
           color: KAppColors.kGray,
         ),
+        helperMaxLines: 1,
+        
+
+        
         border: decorationOutBorder(
           borderColorCode: borderColorCode,
           borderWidht: borderWidht,
+          
         ),
         enabledBorder: decorationOutBorder(
           borderColorCode: enabledBorderColorCode,

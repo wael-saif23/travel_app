@@ -38,6 +38,13 @@ import 'res/app_size.dart';
 // - edit in auth head text to make widget more reusable
 // - use context and sizedbox extensions in views UI 
 // - * create register view body widget
+//** forget password case views ** 
+// - add forget password views icons
+// - add lang texts to en.json 
+// - * create forget password view and view body widgets 
+// - * create otp verification view and view body widgets 
+// - change app langkey to 'en' 
+// - * add needed routes 
 
 
 Future<void> main() async {

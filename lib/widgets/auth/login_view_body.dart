@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_app/core/extension/context_extensions.dart';
-import 'package:travel_app/core/localization/app_localization.dart';
 import 'package:travel_app/core/utils/app_text_styles.dart';
 import 'package:travel_app/res/assets.dart';
 import 'package:travel_app/res/colors.dart';
@@ -60,7 +59,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               Align(
                 alignment: Alignment.bottomRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.navNamedTo(KAppRoutes.forgetPassword);
+                  },
                   child: Text(
                     context.translate("Forget_Password"),
                     style: KAppTextStyle.poppinsSemiBold14.copyWith(
@@ -72,7 +73,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               SizedBox(height: 22.h),
               CustomButton(
                 onPressed: () {},
-                text: AppLocalizations.of(context)?.translate("Sign_In") ?? '',
+                text: context.translate("Sign_In"),
                 hMargin: 0.w,
                 borderRadius: 12.r,
                 horizontalPadding: 0,

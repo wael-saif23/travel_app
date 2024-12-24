@@ -5,6 +5,7 @@
   "Your_email" : "Your email",
   "Min. 8 characters" : "Min. 8 characters",
   "Forget_Password" : "Forget Password?",
+  "Forgot_password" : "Forgot Password",
   "Sign_In" : "Sign In",
   "Sign_Up" : "Sign Up",
   "Or_with_email" : "Or with email",
@@ -13,6 +14,15 @@
   "Sign_up_now": "Sign up now",
   "Please_fill_the_details_and_create_account": "Please fill the details and create account",
   "Your_name": "Your name",
-  "Enter_your_email_account_to_reset_your_password" : "Enter your email account to reset your password",
-  "Already_have_an_account" : "Already have an account?"
+  "Enter_your_email_account_to_reset_your_password" : "Enter your email account to\nreset your password",
+  "Already_have_an_account" : "Already have an account?",
+  "Reset_Password" : "Reset Password",
+  "Check_your_email" : "Check your email",
+  "We_have_send_password_recovery" : "We have send password\nrecovery instruction to\nyour email",
+  "OTP_Verification" : "OTP Verification",
+  "Please_check_your_email " : "Please check your email",
+  "to_see_the_verification_code" : " to see the\nverification code",
+  "OTP_Code" : "OTP Code",
+  "Verify" : "Verify",
+  "Resend_OTP" : "Resend code to"
 }

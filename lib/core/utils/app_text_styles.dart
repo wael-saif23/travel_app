@@ -108,6 +108,12 @@ static TextStyle poppinsSemiBold18 = TextStyle(
   fontWeight: FontWeight.w600, // SemiBold
 );
 
+static TextStyle poppinsSemiBold20 = TextStyle(
+  fontSize: 20.sp,
+  fontFamily: "Poppins",
+  fontWeight: FontWeight.w600, // SemiBold
+);
+
 static TextStyle poppinsSemiBold26 = TextStyle(
   fontSize: 26.sp,
   fontFamily: "Poppins",
