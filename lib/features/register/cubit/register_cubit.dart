@@ -9,10 +9,10 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   bool isRegisterLoading = false;
 
-  Future<void> register() async => responseHandler(
-        onStart: () {},
-        apiRequest: () async {},
-        onSuccess: (result) {},
-        onError: (error) {},
-      );
+  // Future<void> register() async => responseHandler(
+  //       onStart: () {},
+  //       apiRequest: () async {},
+  //       onSuccess: (result) {},
+  //       onError: (error) {},
+  //     );
 }

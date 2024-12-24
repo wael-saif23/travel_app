@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_app/core/extension/context_extensions.dart';
-import 'package:travel_app/core/localization/app_localization.dart';
-import 'package:travel_app/core/utils/app_text_styles.dart';
+import 'package:travel_app/core/extension/sizedbox_extention.dart';
 import 'package:travel_app/res/assets.dart';
-import 'package:travel_app/res/colors.dart';
 import 'package:travel_app/res/style.dart';
 import 'package:travel_app/routes/k_routes.dart';
 import 'package:travel_app/widgets/auth/auth_head_text.dart';
@@ -13,14 +11,14 @@ import 'package:travel_app/widgets/auth/or_social_sign_widget.dart';
 import 'package:travel_app/widgets/customs/custom_button.dart';
 import 'package:travel_app/widgets/customs/custom_text_form_field.dart';
 
-class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+class RegisterViewBody extends StatefulWidget {
+  const RegisterViewBody({super.key});
 
   @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
+  State<RegisterViewBody> createState() => _RegisterViewBodyState();
 }
 
-class _LoginViewBodyState extends State<LoginViewBody> {
+class _RegisterViewBodyState extends State<RegisterViewBody> {
   final formkey = GlobalKey<FormState>();
   bool isObscureText = true;
   @override
@@ -33,18 +31,23 @@ class _LoginViewBodyState extends State<LoginViewBody> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 82.h),
+              82.sH,
               AuthHeadText(
-                headText: context.translate("Sign_in_now"),
-                subHeadText:
-                    context.translate("Please_sign_in_to_continue_our_app"),
+                headText: context.translate('Sign_up_now'),
+                subHeadText: context
+                    .translate("Please_fill_the_details_and_create_account"),
               ),
               KAppStyle.moreMaxSH,
+              CustomTextFormField(
+                hintText: context.translate("Your_name"),
+                prefixIconName: KAppSvgs.user,
+              ),
+              KAppStyle.midSH,
               CustomTextFormField(
                 hintText: context.translate("Your_email"),
                 prefixIconName: KAppSvgs.emailIcon,
               ),
-              KAppStyle.maxSH,
+              KAppStyle.midSH,
               CustomTextFormField(
                 hintText: context.translate('Min. 8 characters'),
                 prefixIconName: KAppSvgs.passwordIcon,
@@ -56,23 +59,10 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 },
                 suffixIconName: KAppSvgs.eyeSlashIcon,
               ),
-              SizedBox(height: 22.h),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    context.translate("Forget_Password"),
-                    style: KAppTextStyle.poppinsSemiBold14.copyWith(
-                      color: KAppColors.lightPrimaryColor,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 22.h),
+              30.sH,
               CustomButton(
                 onPressed: () {},
-                text: AppLocalizations.of(context)?.translate("Sign_In") ?? '',
+                text: context.translate("Sign_Up"),
                 hMargin: 0.w,
                 borderRadius: 12.r,
                 horizontalPadding: 0,
@@ -82,20 +72,10 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               OrSocialSignWidget(),
               KAppStyle.semiMidSH,
               HaveOrNotAccountWidget(
-                onTapSign: () => context.navNamedTo(KAppRoutes.signup),
+                onTapSign: () => context.navNamedTo(KAppRoutes.login),
                 textHaveOrNotAccount:
-                    context.translate("Don’t_have_an_account?"),
-                textSignupOrLogin: context.translate("Sign_Up"),
-              ),
-              KAppStyle.maxSH,
-              TextButton(
-                onPressed: () => context.navNamedTo(KAppRoutes.home),
-                child: Text(
-                  context.translate("Skip"),
-                  style: KAppTextStyle.interSemiBold16.copyWith(
-                    color: KAppColors.blackColor,
-                  ),
-                ),
+                    context.translate("Already_have_an_account"),
+                textSignupOrLogin: context.translate("Sign_In"),
               ),
             ],
           ),

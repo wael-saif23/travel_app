@@ -23,6 +23,7 @@ class KAppSvgs {
  static const String googleIcon = 'assets/images/svg/google_icon.svg';
  static const String passwordIcon = 'assets/images/svg/password_icon.svg';
  static const String appleIcon = 'assets/images/svg/apple_icon.svg';
+ static const String user = 'assets/images/svg/user.svg';
 
 
 

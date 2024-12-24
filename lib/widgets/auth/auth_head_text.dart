@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/core/localization/app_localization.dart';
 import 'package:travel_app/core/utils/app_text_styles.dart';
 import 'package:travel_app/res/style.dart';
 
 class AuthHeadText extends StatelessWidget {
   const AuthHeadText({
-    super.key,
+    super.key, required this.headText, this.headTextStyle, required this.subHeadText, this.subHeadTextStyle, this.subHeadTextHorizontalPadding,
   });
+  final String headText;
+  final TextStyle? headTextStyle;
+  final String subHeadText;
+  final TextStyle? subHeadTextStyle;
+  final double? subHeadTextHorizontalPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +19,19 @@ class AuthHeadText extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            AppLocalizations.of(context)?.translate("Sign_in_now")??'',
-            style: KAppTextStyle.poppinsSemiBold26.copyWith(
+            headText,
+            style:headTextStyle?? KAppTextStyle.poppinsSemiBold26.copyWith(
               color: Color(0xff1B1E28),
             ),
           ),
           KAppStyle.smallMidSH,
-          Text(
-            AppLocalizations.of(context)?.translate("Please_sign_in_to_continue_our_app")??'',
-            style: KAppTextStyle.poppinsRegular16.copyWith(
-              color: Color(0xff7D848D),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal:subHeadTextHorizontalPadding ?? 0),
+            child: Text(
+              subHeadText,
+              style:subHeadTextStyle?? KAppTextStyle.poppinsRegular16.copyWith(
+                color: Color(0xff7D848D),
+              ),
             ),
           ),
         ],

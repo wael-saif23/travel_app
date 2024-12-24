@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app/widgets/auth/register_view_body.dart';
+import 'package:travel_app/widgets/customs/scaffold_pattern.dart';
 
 import '../cubit/register_cubit.dart';
 
@@ -13,7 +15,9 @@ class RegisterScreen extends StatelessWidget {
       child: BlocConsumer<RegisterCubit, RegisterState>(
         listener: (context, state) {},
         builder: (context, state) {
-          return Container();
+          return ScaffoldPattern(
+            child: RegisterViewBody(),
+          );
         },
       ),
     );

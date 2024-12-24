@@ -31,6 +31,15 @@ import 'res/app_size.dart';
 // - * create custom text form field widget
 // - * create social login button widget
 
+// ** finish signup view UI ** 
+// - add key to en.json - localization-
+// - *create home view file 
+// - add navigation to home view and register view 
+// - edit in auth head text to make widget more reusable
+// - use context and sizedbox extensions in views UI 
+// - * create register view body widget
+
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
