@@ -7,6 +7,7 @@ import 'package:travel_app/res/colors.dart';
 import 'package:travel_app/res/style.dart';
 import 'package:travel_app/routes/k_routes.dart';
 import 'package:travel_app/widgets/auth/auth_head_text.dart';
+import 'package:travel_app/widgets/auth/resend_code_widget.dart';
 import 'package:travel_app/widgets/customs/custom_app_bar.dart';
 import 'package:travel_app/widgets/customs/custom_button.dart';
 import 'package:travel_app/widgets/customs/custom_text_form_field.dart';
@@ -89,38 +90,6 @@ class OTPVerificationViewBody extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class ResendCodeWidget extends StatelessWidget {
-  const ResendCodeWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        TextButton(
-          onPressed: () {
-            context.navNamedTo(KAppRoutes.forgetPassword);
-          },
-          child: Text(
-            context.translate("Resend_OTP"),
-            style: KAppTextStyle.poppinsSemiBold14.copyWith(
-              color: KAppColors.kLighterGrayInAUTH,
-            ),
-          ),
-        ),
-        Text(
-         '00 : 00',
-          style: KAppTextStyle.poppinsSemiBold14.copyWith(
-            color: KAppColors.kLighterGrayInAUTH,
-          ),
-        ),
-      ],
     );
   }
 }

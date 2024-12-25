@@ -40,7 +40,7 @@ class ForgetPasswordViewBody extends StatelessWidget {
             CustomButton(
               onPressed: () {
                 showDialog(context);
-                Future.delayed(Duration(seconds: 3), () {
+                Future.delayed(Duration(seconds: 2), () {
                   Navigator.pop(context);
                   context.navNamedTo(KAppRoutes.otpVerificationView);
                 });

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 
-import '../../../data/api/utils/custom_response_handler.dart';
+import '../../../../data/api/utils/custom_response_handler.dart';
 
 part 'register_state.dart';
 

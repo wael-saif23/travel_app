@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/features/home/views/home_view.dart';
-import 'package:travel_app/features/login/view/forget_password_view.dart';
-import 'package:travel_app/features/login/view/login_view.dart';
-import 'package:travel_app/features/login/view/otp_verification_view.dart';
-import 'package:travel_app/features/register/view/register_view.dart';
+
+import 'package:travel_app/features/auth/forget_password/views/forget_password_view.dart';
+import 'package:travel_app/features/auth/login/view/login_view.dart';
+import 'package:travel_app/features/auth/otp_verification/views/otp_verification_view.dart';
+import 'package:travel_app/features/auth/register/view/register_view.dart';
+import 'package:travel_app/features/button_nav/home/views/home_view.dart';
 
 import '../core/utils/no_internet/no_internet_page.dart';
 import '../features/splash/view/splash_view.dart';
