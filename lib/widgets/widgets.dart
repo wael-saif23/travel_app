@@ -5,4 +5,4 @@ export 'customs/custom_button.dart';
 export 'customs/loading_widget.dart';
 export 'customs/network_image_with_loading.dart';
 export 'customs/scaffold_pattern.dart';
-export 'shared/bottom_nav_item.dart';
+export 'buttom_nav/bottom_nav_item.dart';

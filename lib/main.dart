@@ -45,6 +45,15 @@ import 'res/app_size.dart';
 // - * create otp verification view and view body widgets 
 // - change app langkey to 'en' 
 // - * add needed routes 
+// ** create navigation bar view ** 
+// - add needed icons 
+// - add needed routes for the pages 
+// - * create bottom nav bar cubit
+// - * create item nav bar model 
+// - * create pages for page view and cubit for each page 
+// - * create main nav bar widget to control pages using bottom navigation bar 
+// - * edit in bottom nav item widget to make it fit for this app 
+// - * create custom bottom navigation bar fit for the app 
 
 
 Future<void> main() async {

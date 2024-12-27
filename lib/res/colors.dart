@@ -15,4 +15,5 @@ class KAppColors {
   static const kLighterGray = Color(0xff9CA3AF);
     static const kLighterGrayInAUTH = Color(0xff7D848D);
   static const kBorderLighterGray = Color(0xffEEEFF2);
+ 
 }

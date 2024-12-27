@@ -90,7 +90,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               ),
               KAppStyle.maxSH,
               TextButton(
-                onPressed: () => context.navNamedTo(KAppRoutes.home),
+                onPressed: () => context.navNamedTo(KAppRoutes.mainNavView),
                 child: Text(
                   context.translate("Skip"),
                   style: KAppTextStyle.interSemiBold16.copyWith(
