@@ -19,24 +19,33 @@ class KAppSvgs {
   // *auth
 
   static const String emailIcon = 'assets/images/svg/email_icon.svg';
- static const String eyeSlashIcon = 'assets/images/svg/eye_slash.svg';
- static const String googleIcon = 'assets/images/svg/google_icon.svg';
- static const String passwordIcon = 'assets/images/svg/password_icon.svg';
- static const String appleIcon = 'assets/images/svg/apple_icon.svg';
- static const String user = 'assets/images/svg/user.svg';
-static const String checkEmailIcon = 'assets/images/svg/check_email_icon.svg';
+  static const String eyeSlashIcon = 'assets/images/svg/eye_slash.svg';
+  static const String googleIcon = 'assets/images/svg/google_icon.svg';
+  static const String passwordIcon = 'assets/images/svg/password_icon.svg';
+  static const String appleIcon = 'assets/images/svg/apple_icon.svg';
+  static const String user = 'assets/images/svg/user.svg';
+  static const String checkEmailIcon = 'assets/images/svg/check_email_icon.svg';
 
 // *navigation bar icons
-static const String homeIconUnselected = 'assets/images/svg/home_icon_unselected.svg';
-static const String addPlansIconUnselected = 'assets/images/svg/add_plans_icon_unselected.svg';
-static const String bookingIconUnselected = 'assets/images/svg/booking_icons_unselected.svg';
-static const String profileIconUnselected = 'assets/images/svg/profile_icon_unselected.svg';
-static const String homeIconSelected = 'assets/images/svg/Home_icon_selected.svg';
-static const String addPlansIconSelected = 'assets/images/svg/add_plans_icon_selected.svg';
-static const String bookingIconSelected = 'assets/images/svg/booking_icon_selected.svg';
-static const String profileIconSelected = 'assets/images/svg/profile_icon_selected.svg';
+  static const String homeIconUnselected =
+      'assets/images/svg/home_icon_unselected.svg';
+  static const String addPlansIconUnselected =
+      'assets/images/svg/add_plans_icon_unselected.svg';
+  static const String bookingIconUnselected =
+      'assets/images/svg/booking_icons_unselected.svg';
+  static const String profileIconUnselected =
+      'assets/images/svg/profile_icon_unselected.svg';
+  static const String homeIconSelected =
+      'assets/images/svg/Home_icon_selected.svg';
+  static const String addPlansIconSelected =
+      'assets/images/svg/add_plans_icon_selected.svg';
+  static const String bookingIconSelected =
+      'assets/images/svg/booking_icon_selected.svg';
+  static const String profileIconSelected =
+      'assets/images/svg/profile_icon_selected.svg';
 
-
+////////////////////////////
+  static const String editIcon = 'assets/images/svg/Edit_icon.svg';
 }
 
 class KAppPngs {
@@ -57,4 +66,5 @@ class KAppPngs {
   static const String noInternet = 'assets/images/png/no_internet.jpg';
 
   static const String defaultBG = 'assets/images/png/defaultBG.png';
+  static const String userExImage = "assets/images/png/userExImage.png";
 }
