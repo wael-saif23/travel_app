@@ -24,5 +24,20 @@
   "to_see_the_verification_code" : " to see the\nverification code",
   "OTP_Code" : "OTP Code",
   "Verify" : "Verify",
-  "Resend_OTP" : "Resend code to"
+  "Resend_OTP" : "Resend code to",
+  "Search_here" : "Search here",
+  "Services_We_Provide " : "Services We Provide",
+  "services_that_we_can_provide_to_you" : "services that we can provide to you.",
+  "Rent_Car" : "Rent Car",
+  "Book_Hotel" : "Book Hotel",
+  "Resturants" : "Resturants",
+  "Travel_Guide" : "Travel Guide",
+  "Travel_Blog" : "Travel Blog",
+  "Travel_Packages" : "Travel Packages",
+  "Shopping" : "Shopping",
+  
+  "Contact_Us" : "Contact Us",
+  "About_Us" : "About Us",
+  "Offers" : "Offers"
+
 }

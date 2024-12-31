@@ -55,6 +55,10 @@ import 'res/app_size.dart';
 // - * create main nav bar widget to control pages using bottom navigation bar
 // - * edit in bottom nav item widget to make it fit for this app
 // - * create custom bottom navigation bar fit for the app
+// ** create custom app bar for home and profile pages **
+// - try to change status bar color in main file
+// - * create custom app bar
+
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

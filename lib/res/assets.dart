@@ -46,6 +46,13 @@ class KAppSvgs {
 
 ////////////////////////////
   static const String editIcon = 'assets/images/svg/Edit_icon.svg';
+
+  static const String leadingSearchIcon =
+      'assets/images/svg/leading_search_icon.svg';
+
+//* mark
+  static const String markSelected = 'assets/images/svg/mark_selected.svg';
+  static const String markUnselected = 'assets/images/svg/mark_unselected.svg';
 }
 
 class KAppPngs {
@@ -67,4 +74,25 @@ class KAppPngs {
 
   static const String defaultBG = 'assets/images/png/defaultBG.png';
   static const String userExImage = "assets/images/png/userExImage.png";
+
+  //* tourist places
+  static const String riyadCity = 'assets/images/png/riyad_city.jpg';
+  static const String dmamCity = 'assets/images/png/dmam_city.jpg';
+  static const String el3laCity = 'assets/images/png/el3la_city.jpg';
+  static const String geddahCity = 'assets/images/png/geddah_city.jpg';
+  static const String haialCity = 'assets/images/png/haial_city.jpg';
+  static const String madinaCity = 'assets/images/png/madina_city.jpg';
+  static const String makaCity = 'assets/images/png/maka_city.jpg';
+
+  //////////////
+  static const String noImageFounded = 'assets/images/png/no_image_found.jpg';
+  // *services
+  static const String rentCar = 'assets/images/png/rent_car.png';
+  static const String bookHotel = "assets/images/png/book_hotel.png";
+  static const String resturants = "assets/images/png/resturants.png";
+  static const String shopping = "assets/images/png/shopping.png";
+
+  //* offers
+  static const String offer1 = "assets/images/png/offer1.png";
+  static const String offer2 = "assets/images/png/offer2.png";
 }
