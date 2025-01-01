@@ -10,7 +10,8 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScaffoldPattern(
       appBarBackgroundColor: KAppColors.primaryColor,
-      child: HomeViewBody(
+      child: 
+      HomeViewBody(
         
       ),
     );

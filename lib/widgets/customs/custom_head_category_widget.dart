@@ -1,10 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:travel_app/core/extension/sizedbox_extention.dart';
 import 'package:travel_app/core/utils/app_text_styles.dart';
+import 'package:travel_app/data/model/category_model.dart';
 import 'package:travel_app/res/colors.dart';
+import 'package:travel_app/widgets/customs/popup_menu_button_widget.dart';
 
 class CustomHeadCategoryWidget extends StatelessWidget {
   const CustomHeadCategoryWidget({
@@ -12,14 +10,16 @@ class CustomHeadCategoryWidget extends StatelessWidget {
     required this.headName,
     this.onTap,
     this.subtitle,
+    this.categoryList,
   });
   final String headName;
   final String? subtitle;
   final VoidCallback? onTap;
+  final List<CategoryModel>? categoryList;
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,28 +40,13 @@ class CustomHeadCategoryWidget extends StatelessWidget {
                 : SizedBox(),
           ],
         ),
-        Spacer(),
-        InkWell(
-          onTap: onTap,
-          child: Row(
-            children: [
-              Text(
-                "View All",
-                style: KAppTextStyle.poppinsMedium14.copyWith(
-                  color: KAppColors.kGray,
-                ),
-              ),
-              2.sW,
-              Transform.rotate(
-                angle: -90 * pi / 180,
-                child: Icon(
-                  Icons.arrow_back_ios_new,
-                  size: 12.sp,
-                  color: KAppColors.kGray,
-                ),
-              ),
-            ],
-          ),
+        ViewAllPopupMenuButtonWidget(
+          categoryList: categoryList,
+          onItemSelected: (selectedItem) {
+            if (onTap != null) {
+              onTap!();
+            }
+          },
         )
       ],
     );

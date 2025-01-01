@@ -55,7 +55,7 @@ class HomeViewBody extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: CustomHeadCategoryWidget(
               headName: 'Tourist Places',
-              onTap: () {},
+              categoryList: touristPlaces,
             ),
           ),
           13.sH,
@@ -65,12 +65,10 @@ class HomeViewBody extends StatelessWidget {
             ),
             child: SizedBox(
               height: 116.h,
-              child: Expanded(
-                child: CustomCategoryListBodyWidget(
-                  isImageCircle: true,
-                  categoryList: touristPlaces,
-                  borderRadius: 100,
-                ),
+              child: CustomCategoryListBodyWidget(
+                isImageCircle: true,
+                categoryList: touristPlaces,
+                borderRadius: 100,
               ),
             ),
           ),
@@ -78,7 +76,7 @@ class HomeViewBody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
             child: CustomHeadCategoryWidget(
-              onTap: () {},
+              categoryList: services,
               headName: context.translate("Services_We_Provide "),
               subtitle:
                   context.translate("services_that_we_can_provide_to_you"),
@@ -91,20 +89,22 @@ class HomeViewBody extends StatelessWidget {
             ),
             child: SizedBox(
               height: 116.h,
-              child: Expanded(
-                child: CustomCategoryListBodyWidget(
-                  isImageCircle: false,
-                  categoryList: services,
-                  borderRadius: 12,
-                  imageFit: BoxFit.scaleDown,
-                ),
+              child: CustomCategoryListBodyWidget(
+                isImageCircle: false,
+                categoryList: services,
+                
+                borderRadius: 12,
+                imageFit: BoxFit.scaleDown,
               ),
             ),
           ),
           16.sH,
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: CustomHeadCategoryWidget(headName: 'Offers'),
+            child: CustomHeadCategoryWidget(
+              headName: 'Offers',
+              categoryList: offers,
+            ),
           ),
           6.sH,
           Padding(

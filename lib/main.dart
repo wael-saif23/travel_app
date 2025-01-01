@@ -58,7 +58,16 @@ import 'res/app_size.dart';
 // ** create custom app bar for home and profile pages **
 // - try to change status bar color in main file
 // - * create custom app bar
-
+// ** finish home feature UI **
+// - add needed assets and text
+// - * create category model
+// - * create custom search bar widget
+// - * build home view body UI
+// - * create custom category list body widget
+// - * create custom head category widget
+// ** add popup menu button in home view category **
+// - * create view all popup menu button widget
+// - handling other widget to connect with popup menu widget
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
