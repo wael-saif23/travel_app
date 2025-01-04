@@ -68,6 +68,14 @@ import 'res/app_size.dart';
 // ** add popup menu button in home view category **
 // - * create view all popup menu button widget
 // - handling other widget to connect with popup menu widget
+// ** finish add plans UI view ** 
+// - * create plans model 
+// - * build add plans view UI 
+// - * create custom simple app bar to use in all app 
+// - * build add plans view body widget
+// - * create floating new plan button widget
+// - * create custom trip plan widget 
+// - * add floating action button property in scaffold pattern widget
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

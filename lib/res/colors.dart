@@ -9,6 +9,7 @@ class KAppColors {
   static const blackColor = Color(0xff101010);
   static const hintColor = Color(0xFFD2D2D2);
   static const white = Color(0xffffffff);
+  static const secondScafoldColor = Color(0xFFFFF8F3);
   static const color_9E9E9E = Color(0xFF9E9E9E);
   static const color_C3ACD0 = Color(0xFFC3ACD0);
   static const kGray = Color(0xffA9A9A9);

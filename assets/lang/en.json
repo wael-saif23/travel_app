@@ -35,9 +35,11 @@
   "Travel_Blog" : "Travel Blog",
   "Travel_Packages" : "Travel Packages",
   "Shopping" : "Shopping",
-  
   "Contact_Us" : "Contact Us",
   "About_Us" : "About Us",
-  "Offers" : "Offers"
+  "Offers" : "Offers",
+  "My_Plans" : "My Plans",
+  "New_Plan" : "New Plan",
+  "Trip to " : "Trip to "
 
 }

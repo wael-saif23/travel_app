@@ -14,7 +14,7 @@ class ScaffoldPattern extends StatelessWidget {
     this.backPatternPath = KAppPngs.defaultBG,
     this.backgroundColor = Colors.transparent,
     this.appBarBackgroundColor = Colors.white,
-    this.statusBarIsLight = true, this.bottomNavigationBar, this.appBar,
+    this.statusBarIsLight = true, this.bottomNavigationBar, this.appBar, this.floatingActionButton,
   });
 
   final Widget child;
@@ -25,6 +25,7 @@ class ScaffoldPattern extends StatelessWidget {
   final bool statusBarIsLight;
   final Widget? bottomNavigationBar;
   final PreferredSizeWidget? appBar;
+  final Widget? floatingActionButton;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,7 @@ class ScaffoldPattern extends StatelessWidget {
           ),
         ),
         child: Scaffold(
+          floatingActionButton: floatingActionButton,
           backgroundColor: backgroundColor,
           appBar:appBar ?? ZeroHeightAppBar(color: appBarBackgroundColor, statusBarIsLight: statusBarIsLight),
           body: Stack(
