@@ -76,6 +76,14 @@ import 'res/app_size.dart';
 // - * create floating new plan button widget
 // - * create custom trip plan widget 
 // - * add floating action button property in scaffold pattern widget
+// ** create tap bar to control booking views **
+// - * create cubit and cubit stats to control taps and booking views 
+// - * create file for each view in booking views folder 
+// - * create app bar and tap bar for booking view and control the booking
+// views in booking views app bar method 
+// - * create custom tap item widget file 
+// -  add bottom property to custom simple app bar for
+// adding bottom tap bar if needed .
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

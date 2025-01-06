@@ -3,7 +3,7 @@ import 'package:travel_app/core/extension/context_extensions.dart';
 import 'package:travel_app/core/utils/app_text_styles.dart';
 import 'package:travel_app/res/colors.dart';
 
-AppBar customSimpleAppbar({required BuildContext context, required String title , VoidCallback? onleadingButtonTap}) {
+AppBar customSimpleAppbar({required BuildContext context, required String title , VoidCallback? onleadingButtonTap,PreferredSizeWidget? bottomTapBarWidget }) {
     return AppBar(
         backgroundColor: KAppColors.primaryColor,
         leading: IconButton(
@@ -17,5 +17,6 @@ AppBar customSimpleAppbar({required BuildContext context, required String title 
             color: KAppColors.white,
           ),
         ),
+        bottom: bottomTapBarWidget,
       );
   }
