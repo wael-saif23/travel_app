@@ -90,6 +90,10 @@ import 'res/app_size.dart';
 // - * create custom service card 
 // - * build canceled, past and active views UI using
 // custom service card
+// ** finish profile view UI ** 
+// - add needed assets 
+// - * create custom profile button
+// - * build profile view UI using custom pp bar and custom profile button 
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
