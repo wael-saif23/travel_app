@@ -27,13 +27,13 @@ class BookingCubit extends Cubit<BookingState> {
     Future.delayed(const Duration(milliseconds: 250), () {
       switch (index) {
         case 0:
-          emit(BookingCanceledLoadedState());
+          emit(BookingActiveLoadedState());
           break;
         case 1:
           emit(BookingPastLoadedState());
           break;
         case 2:
-          emit(BookingActiveLoadedState());
+          emit(BookingCanceledLoadedState());
           break;
         default:
           emit(BookingInitialState());

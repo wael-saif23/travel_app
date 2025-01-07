@@ -84,6 +84,12 @@ import 'res/app_size.dart';
 // - * create custom tap item widget file 
 // -  add bottom property to custom simple app bar for
 // adding bottom tap bar if needed .
+// ** finish booking view UI ** 
+// - add needed assets 
+// - * create service card model 
+// - * create custom service card 
+// - * build canceled, past and active views UI using
+// custom service card
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

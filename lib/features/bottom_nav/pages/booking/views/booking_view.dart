@@ -26,12 +26,12 @@ class BookingView extends StatelessWidget {
             builder: (context, state) {
               if (state is BookingLoadingState) {
                 return const Center(child: CircularProgressIndicator());
-              } else if (state is BookingCanceledLoadedState) {
-                return const CanceledView();
-              } else if (state is BookingPastLoadedState) {
-                return const PastView();
               } else if (state is BookingActiveLoadedState) {
                 return const ActiveView();
+              } else if (state is BookingPastLoadedState) {
+                return const PastView();
+              } else if (state is BookingCanceledLoadedState ) {
+                return const CanceledView();
               }
               return const Center(child: Text("Select a Tab"));
             },
@@ -43,46 +43,43 @@ class BookingView extends StatelessWidget {
 
   AppBar bookingViewAppBar(BuildContext context) {
     return customSimpleAppbar(
-          context: context,
-          title: 'Bookings',
-          bottomTapBarWidget: PreferredSize(
-            preferredSize: const Size.fromHeight(70.0),
-            child: Container(
-              height: 60.h,
-              color: KAppColors.secondScafoldColor,
-              child: BlocBuilder<BookingCubit, BookingState>(
-                builder: (context, state) {
-                  final activeTab = context.read<BookingCubit>().activeTab;
-                  return TabBar(
-                    onTap: (index) {
-                      context.read<BookingCubit>().changeTab(index);
-                    },
-                    unselectedLabelColor: KAppColors.blacPrimaryColor,
-                    labelColor: KAppColors.primaryColor,
-                    labelStyle: KAppTextStyle.poppinsMedium16,
-                    indicator: const BoxDecoration(),
-                    tabs: [
-                      CustomTapItemWidget(
-                        tapItemText: 'Canceled',
-                        isSelected: activeTab == 0,
-                      ),
-                      CustomTapItemWidget(
-                        tapItemText: 'Past',
-                        isSelected: activeTab == 1,
-                      ),
-                      CustomTapItemWidget(
-                        tapItemText: 'Active',
-                        isSelected: activeTab == 2,
-                      ),
-                    ],
-                  );
+      context: context,
+      title: 'Bookings',
+      bottomTapBarWidget: PreferredSize(
+        preferredSize: const Size.fromHeight(70.0),
+        child: Container(
+          height: 60.h,
+          color: KAppColors.secondScafoldColor,
+          child: BlocBuilder<BookingCubit, BookingState>(
+            builder: (context, state) {
+              final activeTab = context.read<BookingCubit>().activeTab;
+              return TabBar(
+                onTap: (index) {
+                  context.read<BookingCubit>().changeTab(index);
                 },
-              ),
-            ),
+                unselectedLabelColor: KAppColors.blacPrimaryColor,
+                labelColor: KAppColors.primaryColor,
+                labelStyle: KAppTextStyle.poppinsMedium16,
+                indicator: const BoxDecoration(),
+                tabs: [
+                  CustomTapItemWidget(
+                    tapItemText: 'Active',
+                    isSelected: activeTab == 0,
+                  ),
+                  CustomTapItemWidget(
+                    tapItemText: 'Past',
+                    isSelected: activeTab == 1,
+                  ),
+                  CustomTapItemWidget(
+                    tapItemText: 'Canceled',
+                    isSelected: activeTab == 2,
+                  ),
+                ],
+              );
+            },
           ),
-        );
+        ),
+      ),
+    );
   }
 }
-
-
-

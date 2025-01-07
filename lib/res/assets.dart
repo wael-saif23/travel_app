@@ -50,9 +50,14 @@ class KAppSvgs {
   static const String leadingSearchIcon =
       'assets/images/svg/leading_search_icon.svg';
 
+  static const String starIcon = 'assets/images/svg/star_icon.svg';
+
 //* mark
   static const String markSelected = 'assets/images/svg/mark_selected.svg';
   static const String markUnselected = 'assets/images/svg/mark_unselected.svg';
+
+////////
+//
 }
 
 class KAppPngs {
@@ -95,4 +100,12 @@ class KAppPngs {
   //* offers
   static const String offer1 = "assets/images/png/offer1.png";
   static const String offer2 = "assets/images/png/offer2.png";
+
+  // * services card photos
+  static const String boulevardCity =
+      'assets/images/png/Boulevard_City_bng.png';
+  static const String boulevardWorld =
+      'assets/images/png/Boulevard_World_bng.png';
+  static const String kingdomArenaAlHilalSaudiFC =
+      'assets/images/png/Kingdom_Arena_Al-Hilal_Saudi_FC_bng.png';
 }
