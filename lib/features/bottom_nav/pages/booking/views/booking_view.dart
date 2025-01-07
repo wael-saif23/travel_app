@@ -26,14 +26,13 @@ class BookingView extends StatelessWidget {
             builder: (context, state) {
               if (state is BookingLoadingState) {
                 return const Center(child: CircularProgressIndicator());
-              } else if (state is BookingActiveLoadedState) {
-                return const ActiveView();
               } else if (state is BookingPastLoadedState) {
                 return const PastView();
-              } else if (state is BookingCanceledLoadedState ) {
+              } else if (state is BookingCanceledLoadedState) {
                 return const CanceledView();
+              } else {
+                return const ActiveView();
               }
-              return const Center(child: Text("Select a Tab"));
             },
           ),
         ),
