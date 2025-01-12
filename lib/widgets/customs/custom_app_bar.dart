@@ -23,9 +23,11 @@ class ZeroHeightAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: color, // IOS status bar color
       systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarIconBrightness: statusBarIsLight ? Brightness.dark : Brightness.light,
+        statusBarIconBrightness:
+            statusBarIsLight ? Brightness.dark : Brightness.light,
         // Android status bar icons color
-        statusBarBrightness: statusBarIsLight ? Brightness.light : Brightness.dark,
+        statusBarBrightness:
+            statusBarIsLight ? Brightness.light : Brightness.dark,
         // IOS status bar icons color
         statusBarColor: color, // Android status bar color
       ),
@@ -49,6 +51,9 @@ class DefaultAppBar extends StatelessWidget {
     this.hasCart = true,
     this.hasBottomShadow = true,
     this.backWidth = 28,
+    this.horozontalPadding,
+    this.backgroundColor,
+    this.verticalPadding, this.bottmRadius,
   });
 
   final Widget? bottomWidget;
@@ -59,31 +64,36 @@ class DefaultAppBar extends StatelessWidget {
   final bool hasCart;
   final bool hasBottomShadow;
   final double? backWidth;
+  final double? horozontalPadding;
+  final double? verticalPadding;
+  final Color? backgroundColor;
+  final double? bottmRadius;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(top: 10.h, bottom: 10.h),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: backgroundColor ?? Colors.white,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(20.r),
-          bottomRight: Radius.circular(20.r),
+          bottomLeft: Radius.circular(bottmRadius ?? 25.r),
+          bottomRight: Radius.circular(bottmRadius ?? 25.r),
         ),
       ),
       child: Column(
         children: [
           Padding(
             padding: EdgeInsetsDirectional.symmetric(
-              horizontal: 20.w,
+              horizontal: horozontalPadding ?? 0,
+              vertical: verticalPadding ?? 0,
             ),
             child: Stack(
               alignment: AlignmentDirectional.center,
               children: [
-                Align(
+               (backWidget != null) ? SizedBox(): Align(
                   alignment: Alignment.center,
                   child: SizedBox(
-                    height: 50.h,
+                    height: 20.h,
                     child: title != null
                         ? Center(
                             child: Text(
@@ -94,7 +104,7 @@ class DefaultAppBar extends StatelessWidget {
                               ),
                             ),
                           )
-                        : Image.asset(KAppSvgs.splashLogo),
+                        : SvgPicture.asset(KAppSvgs.splashLogo),
                   ),
                 ),
                 Row(
@@ -112,9 +122,11 @@ class DefaultAppBar extends StatelessWidget {
                             child: Padding(
                               padding: EdgeInsets.symmetric(vertical: 5.h),
                               child: SizedBox(
-                                width: 26.r,
+                                width: 40.r,
                                 child: SvgPicture.asset(
-                                  (KAppKeys.langKey == 'ar') ? KAppSvgs.backArIcon : KAppSvgs.backEnIcon,
+                                  (KAppKeys.langKey == 'ar')
+                                      ? KAppSvgs.backArIcon
+                                      : KAppSvgs.backEnIcon,
                                 ),
                               ),
                             ),
@@ -128,7 +140,7 @@ class DefaultAppBar extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 5.h),
                           child: SizedBox(
                             width: 22.w,
-                            child: SvgPicture.asset(KAppSvgs.notificationIcon),
+                            child: Icon(Icons.alarm),
                           ),
                         ),
                       ),

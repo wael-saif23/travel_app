@@ -23,6 +23,7 @@ class CustomButton extends StatelessWidget {
     this.gradientColor,
     this.shadowColor = Colors.grey,
     this.backgroundColor = KAppColors.primaryColor,
+    this.textStyle, this.textColor,
   });
 
   final double? textSize;
@@ -41,12 +42,15 @@ class CustomButton extends StatelessWidget {
   final Color backgroundColor;
   final Color shadowColor;
   final Gradient? gradientColor;
+  final TextStyle? textStyle;
+  final Color? textColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width ?? double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: hMargin ?? 20.w, vertical: vMargin ?? 0.h),
+      margin: EdgeInsets.symmetric(
+          horizontal: hMargin ?? 20.w, vertical: vMargin ?? 0.h),
       decoration: BoxDecoration(
         gradient: gradientColor,
         borderRadius: BorderRadius.circular(borderRadius ?? 18.r),
@@ -55,11 +59,14 @@ class CustomButton extends StatelessWidget {
         onPressed: isLoading ? null : onPressed,
         style: ButtonStyle(
           padding: WidgetStateProperty.all(
-            EdgeInsets.symmetric(horizontal: horizontalPadding ?? 16.w, vertical: verticalPadding ?? 20.h),
+            EdgeInsets.symmetric(
+                horizontal: horizontalPadding ?? 16.w,
+                vertical: verticalPadding ?? 20.h),
           ),
           elevation: WidgetStateProperty.all(elevation),
           shadowColor: WidgetStateProperty.all(shadowColor),
-          backgroundColor: WidgetStateProperty.all((gradientColor != null) ? Colors.transparent : backgroundColor),
+          backgroundColor: WidgetStateProperty.all(
+              (gradientColor != null) ? Colors.transparent : backgroundColor),
           shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius ?? 18.r),
@@ -71,7 +78,8 @@ class CustomButton extends StatelessWidget {
             ? LoadingWidget(color: Colors.white, size: 30.r)
             : Text(
                 text,
-                style: KAppTextStyle.boldTextStyle.copyWith(fontSize: textSize ?? 18.sp, color: Colors.white),
+                style: textStyle ??
+                    KAppTextStyle.interBold16.copyWith(color:textColor?? Colors.white),
               ),
       ),
     );

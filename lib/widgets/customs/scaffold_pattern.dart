@@ -11,10 +11,10 @@ class ScaffoldPattern extends StatelessWidget {
     super.key,
     required this.child,
     this.isLoading = false,
-    this.backPatternPath = KAppSvgs.defaultBG,
+    this.backPatternPath = KAppPngs.defaultBG,
     this.backgroundColor = Colors.transparent,
     this.appBarBackgroundColor = Colors.white,
-    this.statusBarIsLight = true,
+    this.statusBarIsLight = true, this.bottomNavigationBar, this.appBar, this.floatingActionButton,
   });
 
   final Widget child;
@@ -23,6 +23,9 @@ class ScaffoldPattern extends StatelessWidget {
   final Color backgroundColor;
   final Color appBarBackgroundColor;
   final bool statusBarIsLight;
+  final Widget? bottomNavigationBar;
+  final PreferredSizeWidget? appBar;
+  final Widget? floatingActionButton;
 
   @override
   Widget build(BuildContext context) {
@@ -35,13 +38,15 @@ class ScaffoldPattern extends StatelessWidget {
           color: Colors.white,
           image: DecorationImage(
             image: AssetImage(backPatternPath),
+            scale: MediaQuery.of(context).size.width / 1000,
             fit: BoxFit.fill,
             alignment: Alignment.center,
           ),
         ),
         child: Scaffold(
+          floatingActionButton: floatingActionButton,
           backgroundColor: backgroundColor,
-          appBar: ZeroHeightAppBar(color: appBarBackgroundColor, statusBarIsLight: statusBarIsLight),
+          appBar:appBar ?? ZeroHeightAppBar(color: appBarBackgroundColor, statusBarIsLight: statusBarIsLight),
           body: Stack(
             children: [
               IgnorePointer(
@@ -59,6 +64,7 @@ class ScaffoldPattern extends StatelessWidget {
                   : const SizedBox.shrink(),
             ],
           ),
+          bottomNavigationBar: bottomNavigationBar,
         ),
       ),
     );

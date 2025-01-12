@@ -9,9 +9,11 @@ class KAppStyle {
   static final mainPadding = EdgeInsets.symmetric(horizontal: 16.w);
 
   static final minSH = 8.sH;
+  static final smallMidSH = 12.sH;
   static final midSH = 16.sH;
   static final semiMidSH = 24.sH;
   static final maxSH = 32.sH;
+  static final moreMaxSH = 42.sH;
   static final bigMaxSH = 64.sH;
 
   static final minSW = 8.sW;
