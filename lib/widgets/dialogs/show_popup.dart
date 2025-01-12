@@ -24,7 +24,7 @@ Future showPopup({
             ? Dialog(
                 insetPadding: dialogPadding,
                 backgroundColor: Colors.white,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24.0)),
                 alignment: alignment,
                 child: childContent,
               )

@@ -9,6 +9,6 @@ class KAppKeys {
   static const String APP_HIVE_BOX = 'app_box';
   static const String isLoggedInKey = 'isLoggedIn';
   static const String firstInstallKey = 'firstInstallation';
-  static const String langKey = 'ar';
+  static const String langKey = 'en';
   static final navigatorKey = GlobalKey<NavigatorState>();
 }
