@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:travel_app/core/extension/context_extensions.dart';
-import 'package:travel_app/core/extension/sizedbox_extention.dart';
-import 'package:travel_app/core/utils/app_text_styles.dart';
 import 'package:travel_app/helper/functions/custom_simple_appbar.dart';
 import 'package:travel_app/res/colors.dart';
 import 'package:travel_app/widgets/buttom_nav/add_plans/add_plans_view_body.dart';
