@@ -40,6 +40,10 @@
   "Offers" : "Offers",
   "My_Plans" : "My Plans",
   "New_Plan" : "New Plan",
-  "Trip to " : "Trip to "
+  "Trip to " : "Trip to ",
+  "Bookings" : "Bookings",
+  "Canceled" : "Canceled",
+  "Past" : "Past",
+  "Active" : "Active"
 
 }
