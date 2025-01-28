@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:travel_app/features/auth/forget_password/views/forget_password_view.dart';
 import 'package:travel_app/features/auth/login/view/login_view.dart';
 import 'package:travel_app/features/auth/otp_verification/views/otp_verification_view.dart';
 import 'package:travel_app/features/auth/register/view/register_view.dart';
+import 'package:travel_app/features/bottom_nav/pages/add_plans/trip_details_cubit/trip_details_cubit.dart';
 import 'package:travel_app/features/bottom_nav/pages/add_plans/views/add_plans_view.dart';
+import 'package:travel_app/features/bottom_nav/pages/add_plans/views/trip_details_view.dart';
+import 'package:travel_app/features/bottom_nav/pages/add_plans/views/trip_plan_view.dart';
 import 'package:travel_app/features/bottom_nav/pages/booking/views/booking_view.dart';
 import 'package:travel_app/features/bottom_nav/pages/home/views/home_view.dart';
 import 'package:travel_app/features/bottom_nav/pages/profile/views/profile_view.dart';
@@ -25,7 +29,8 @@ class KAppRoutes {
   static const String bookingView = '/BookingView';
   static const String profileView = '/ProfileView';
   static const String noInternetPage = '/noInternetPage';
-
+  static const String tripPlanView = '/TripPlanView';
+  static const String tripDetailsView = '/TripDetailsView';
   static Route<dynamic>? generateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case splash:
@@ -44,6 +49,14 @@ class KAppRoutes {
         return MaterialPageRoute(builder: (_) => const HomeView());
       case addPlansView:
         return MaterialPageRoute(builder: (_) => const AddPlansView());
+      case tripPlanView:
+        return MaterialPageRoute(builder: (_) => const TripPlanView());
+      case tripDetailsView:
+        return MaterialPageRoute(
+            builder: (_) => BlocProvider(
+                  create: (context) => TripDetailsCubit()..loadeTripDetails(),
+                  child: const TripDetailsView(),
+                ));
       case bookingView:
         return MaterialPageRoute(builder: (_) => const BookingView());
       case profileView:

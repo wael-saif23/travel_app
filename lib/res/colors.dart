@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class KAppColors {
   static const primaryColor = Color(0xFFD56F27);
   static const lightPrimaryColor = Color(0xFFFF7029);
+  static const lighterPrimaryColor = Color(0xFFF4E1D2);
   static const blacPrimaryColor = Color(0xFF1B1E28);
   static const blackColor = Color(0xff101010);
   static const hintColor = Color(0xFFD2D2D2);

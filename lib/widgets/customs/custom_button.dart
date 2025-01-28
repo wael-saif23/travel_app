@@ -23,7 +23,11 @@ class CustomButton extends StatelessWidget {
     this.gradientColor,
     this.shadowColor = Colors.grey,
     this.backgroundColor = KAppColors.primaryColor,
-    this.textStyle, this.textColor,
+    this.textStyle,
+    this.textColor,
+    this.hieght,
+    this.leadingIcon,
+    this.trailingIcon, this.leadingIconColor, this.trailingIconColor, this.leadingIconSize, this.trailingIconSize,
   });
 
   final double? textSize;
@@ -34,6 +38,7 @@ class CustomButton extends StatelessWidget {
   final double? hMargin;
   final double? vMargin;
   final double? width;
+  final double? hieght;
   final Function() onPressed;
   final String text;
   final bool isLoading;
@@ -44,10 +49,17 @@ class CustomButton extends StatelessWidget {
   final Gradient? gradientColor;
   final TextStyle? textStyle;
   final Color? textColor;
+  final IconData? leadingIcon;
+  final IconData? trailingIcon;
+  final Color? leadingIconColor;
+  final Color? trailingIconColor;
+  final double? leadingIconSize;
+  final double? trailingIconSize;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: hieght,
       width: width ?? double.infinity,
       margin: EdgeInsets.symmetric(
           horizontal: hMargin ?? 20.w, vertical: vMargin ?? 0.h),
@@ -76,10 +88,27 @@ class CustomButton extends StatelessWidget {
         ),
         child: isLoading
             ? LoadingWidget(color: Colors.white, size: 30.r)
-            : Text(
-                text,
-                style: textStyle ??
-                    KAppTextStyle.interBold16.copyWith(color:textColor?? Colors.white),
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  leadingIcon != null
+                      ? Icon(leadingIcon,
+                      
+                          size: leadingIconSize ?? 20.r,
+                          color: leadingIconColor ?? Colors.white)
+                      : Container(),
+                  Text(
+                    text,
+                    style: textStyle ??
+                        KAppTextStyle.interBold16
+                            .copyWith(color: textColor ?? Colors.white),
+                  ),
+                  trailingIcon != null
+                      ? Icon(trailingIcon,
+                          size: leadingIconSize ?? 20.r,
+                          color: leadingIconColor ?? Colors.white)
+                      : Container(),
+                ],
               ),
       ),
     );

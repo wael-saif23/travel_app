@@ -13,7 +13,7 @@ class FloatingNewPlanButton extends StatelessWidget {
   final VoidCallback? onButtonTap;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return GestureDetector(
       onTap: onButtonTap,
       child: Container(
         width: 120.w,

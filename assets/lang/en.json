@@ -44,6 +44,17 @@
   "Bookings" : "Bookings",
   "Canceled" : "Canceled",
   "Past" : "Past",
-  "Active" : "Active"
-
+  "Active" : "Active",
+  "Trip_Plan" : "Trip Plan",
+  "New list" : "New list",
+  "Days_Plan" : "Days Plan",
+  "There are no plans available" : "There are no plans available.",
+  "Welcome! Choose a trip to start planning." : "Welcome! Choose a trip to start planning.",
+  "Place Title": "Place Title",
+  "Price" : "Price",
+  "Place Type": "Place Type",
+  "Visit Date" : "Visit Date",
+  "Add description": "Add description",
+  "Add New Place": "Add New Place",
+  "Save": "Save"
 }

@@ -9,6 +9,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPattern(
+      statusBarIsLight: false,
       appBarBackgroundColor: KAppColors.primaryColor,
       child: 
       HomeViewBody(

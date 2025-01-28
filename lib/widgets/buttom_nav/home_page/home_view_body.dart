@@ -41,92 +41,100 @@ class HomeViewBody extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          CustomAppBar(),
-          10.sH,
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.h),
-            child: CustomSearchBarWidget(),
-          ),
-          10.sH,
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: CustomHeadCategoryWidget(
-              headName: 'Tourist Places',
-              categoryList: touristPlaces,
-            ),
-          ),
-          13.sH,
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 20.0,
-            ),
-            child: SizedBox(
-              height: 116.h,
-              child: CustomCategoryListBodyWidget(
-                isImageCircle: true,
-                categoryList: touristPlaces,
-                borderRadius: 100,
+    return Column(
+      children: [
+        CustomAppBar(),
+        10.sH,
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.h),
+          child: CustomSearchBarWidget(),
+        ),
+        10.sH,
+        Expanded(
+            child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: CustomHeadCategoryWidget(
+                      headName: 'Tourist Places',
+                      categoryList: touristPlaces,
+                    ),
+                  ),
+                  13.sH,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 20.0,
+                    ),
+                    child: SizedBox(
+                      height: 116.h,
+                      child: CustomCategoryListBodyWidget(
+                        isImageCircle: true,
+                        categoryList: touristPlaces,
+                        borderRadius: 100,
+                      ),
+                    ),
+                  ),
+                  20.sH,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: CustomHeadCategoryWidget(
+                      categoryList: services,
+                      headName: context.translate("Services_We_Provide "),
+                      subtitle: context
+                          .translate("services_that_we_can_provide_to_you"),
+                    ),
+                  ),
+                  8.sH,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 20.0,
+                    ),
+                    child: SizedBox(
+                      height: 116.h,
+                      child: CustomCategoryListBodyWidget(
+                        isImageCircle: false,
+                        categoryList: services,
+                        borderRadius: 12,
+                        imageFit: BoxFit.scaleDown,
+                      ),
+                    ),
+                  ),
+                  16.sH,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: CustomHeadCategoryWidget(
+                      headName: 'Offers',
+                      categoryList: offers,
+                    ),
+                  ),
+                  6.sH,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 20.0,
+                    ),
+                    child: SizedBox(
+                      height: 230.h,
+                      child: CustomCategoryListBodyWidget(
+                        categoryList: offers,
+                        isImageCircle: false,
+                        aspectRatioContainer: 1.6176,
+                        containerHeight: 170,
+                        containerWidth: 275,
+                        borderRadius: 10,
+                        isHavePriceOnImage: true,
+                        isHaveMark: true,
+                      ),
+                    ),
+                  )
+                ],
               ),
             ),
-          ),
-          20.sH,
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: CustomHeadCategoryWidget(
-              categoryList: services,
-              headName: context.translate("Services_We_Provide "),
-              subtitle:
-                  context.translate("services_that_we_can_provide_to_you"),
-            ),
-          ),
-          8.sH,
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 20.0,
-            ),
-            child: SizedBox(
-              height: 116.h,
-              child: CustomCategoryListBodyWidget(
-                isImageCircle: false,
-                categoryList: services,
-                
-                borderRadius: 12,
-                imageFit: BoxFit.scaleDown,
-              ),
-            ),
-          ),
-          16.sH,
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: CustomHeadCategoryWidget(
-              headName: 'Offers',
-              categoryList: offers,
-            ),
-          ),
-          6.sH,
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 20.0,
-            ),
-            child: SizedBox(
-              height: 230.h,
-              child: CustomCategoryListBodyWidget(
-                categoryList: offers,
-                isImageCircle: false,
-                aspectRatioContainer: 1.6176,
-                containerHeight: 170,
-                containerWidth: 275,
-                borderRadius: 10,
-                isHavePriceOnImage: true,
-                isHaveMark: true,
-              ),
-            ),
-          )
-        ],
-      ),
+          ],
+        ))
+      ],
     );
   }
 }

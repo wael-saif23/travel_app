@@ -93,6 +93,26 @@ import 'res/app_size.dart';
 // - add needed assets 
 // - * create custom profile button
 // - * build profile view UI using custom pp bar and custom profile button
+// ** working with trip plan view and details UI**
+// - add needed assets and lang.  
+// - * add and edit plans and trip day and place models 
+// - * create add plans cubit and states
+// - * create trip details cubit and states 
+// - * edit add plans view UI 
+// - * edit my plans view
+// -* edit trip plan view 
+// - * create add place dialog
+// -* create currency popup menu button widget
+// -* create day header widget
+// -* create day widget
+// -* create days plan widget
+// - * create expenses section widget for trip plan view widget
+// -* create my plans view body widget
+// -* create place widget
+// -* create TripPlanDaysWidget
+// -* create TripPlanHeadBody
+// -* create TripPlanViewBody
+// -* create and edit in GenericPopupMenuButton
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: KAppColors.primaryColor, // navigation bar color

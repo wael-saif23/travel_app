@@ -40,14 +40,13 @@ class CustomHeadCategoryWidget extends StatelessWidget {
                 : SizedBox(),
           ],
         ),
-        ViewAllPopupMenuButtonWidget(
-          categoryList: categoryList,
-          onItemSelected: (selectedItem) {
-            if (onTap != null) {
-              onTap!();
-            }
+        GenericPopupMenuButton<CategoryModel>(
+          itemList: categoryList, // قائمة العناصر
+          onItemSelected: (selectedCategory) {
           },
+          itemToString: (category) => category.title!, // تحويل العنصر إلى نص
         )
+      
       ],
     );
   }

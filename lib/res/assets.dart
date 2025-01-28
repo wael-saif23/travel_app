@@ -52,6 +52,11 @@ class KAppSvgs {
 
   static const String starIcon = 'assets/images/svg/star_icon.svg';
 
+  static const String placeNumperIcon =
+      'assets/images/svg/place_numper_icon.svg';
+
+  static const String cancelIcon = 'assets/images/svg/cancel_icon.svg';
+
 //* mark
   static const String markSelected = 'assets/images/svg/mark_selected.svg';
   static const String markUnselected = 'assets/images/svg/mark_unselected.svg';
@@ -122,4 +127,6 @@ class KAppPngs {
       'assets/images/png/Boulevard_World_bng.png';
   static const String kingdomArenaAlHilalSaudiFC =
       'assets/images/png/Kingdom_Arena_Al-Hilal_Saudi_FC_bng.png';
+
+  static const String tripDetailsRiyadh = 'assets/images/png/trip_details_Riyadh.png';
 }
