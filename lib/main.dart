@@ -10,8 +10,10 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import 'package:travel_app/bloc_obs.dart';
 import 'package:travel_app/res/colors.dart';
+import 'package:travel_app/res/eni_colors.dart';
 import 'package:travel_app/res/keys.dart';
 import 'package:travel_app/routes/k_routes.dart';
+import 'package:travel_app/routes/k_routes_enigma.dart';
 
 import '../app.dart';
 
@@ -113,10 +115,29 @@ import 'res/app_size.dart';
 // -* create TripPlanHeadBody
 // -* create TripPlanViewBody
 // -* create and edit in GenericPopupMenuButton
+
+
+//** Enigma App , My profile & add friend views UI **
+// - add needed assets and create assets file 
+// - add custom text in en.json
+// - add needed fonts and create KAppTextStyleEni file 
+// - * create Enigma Bottom Nav Cubit and state files 
+// -*  create chats view widget and add friend page 
+// -* create cubit to handle which chats or add friend on screen
+// -*  create My Profile view UI 
+// - * create Privacy Policy page 
+// -* create nav bar view
+// - create app colors file
+// -* create several components widget to build my profile view UI 
+//-* create custom show dialog for delete account 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: KAppColors.primaryColor, // navigation bar color
-    statusBarColor: KAppColors.primaryColor, // status bar color
+    // systemNavigationBarColor: KAppENIColors.blackColor, // navigation bar color
+    statusBarColor:  KAppENIColors.blackColor,
+    statusBarBrightness: Brightness.light,
+    statusBarIconBrightness: Brightness.light,
+    // systemNavigationBarColor: KAppColors.primaryColor, // navigation bar color
+    // statusBarColor: KAppColors.primaryColor, // status bar color
   ));
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
@@ -124,10 +145,13 @@ Future<void> main() async {
   await Hive.openBox(KAppKeys.APP_HIVE_BOX);
   bool hasConnection = await InternetConnectionChecker().hasConnection;
   String routeName =
-      (hasConnection) ? KAppRoutes.splash : KAppRoutes.noInternetPage;
+      // (hasConnection) ? KAppRoutes.splash : KAppRoutes.noInternetPage;
+      (hasConnection) ? KAppRoutesEni.mainNavViewEni : KAppRoutesEni.noInternetPage;
   runApp(
     ScreenUtilInit(
-      designSize: Size(AppSize.figmaScreenW, AppSize.figmaScreenH),
+      designSize: 
+      Size(AppSizeEnigma.figmaScreenW, AppSizeEnigma.figmaScreenH),
+      // Size(AppSize.figmaScreenW, AppSize.figmaScreenH),
       minTextAdapt: false,
       splitScreenMode: true,
       useInheritedMediaQuery: true,

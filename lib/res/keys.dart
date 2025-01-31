@@ -11,4 +11,6 @@ class KAppKeys {
   static const String firstInstallKey = 'firstInstallation';
   static const String langKey = 'en';
   static final navigatorKey = GlobalKey<NavigatorState>();
+  /////////////////////////////////////////////////////////
+  static final String appFontSegoeUI = 'Segoe UI';
 }

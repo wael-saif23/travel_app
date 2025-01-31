@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_app/base_cubit/lang/lang_cubit.dart';
+import 'package:travel_app/routes/k_routes_enigma.dart';
 
 import 'routes/k_routes.dart';
 import 'core/localization/app_localizations_setup.dart';
@@ -37,13 +38,13 @@ class App extends StatelessWidget {
       supportedLocales: AppLocalizationSetup.supportedLocales,
       locale: const Locale('en'),     
       
-      onGenerateRoute: KAppRoutes.generateRoute,
+      onGenerateRoute: KAppRoutesEni.generateRoute,
       initialRoute:
           routeName ??
           KAppRoutes.splash,
       ),
       ),
-    );
+    ); 
   }
 
   _applySystemChrome() async {

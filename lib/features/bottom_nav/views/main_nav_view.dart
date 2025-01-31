@@ -53,6 +53,7 @@ class MainNavView extends StatelessWidget {
               navItems: _navItems,
               currentIndex: currentIndex,
               cubit: cubit,
+              
             ),
             child: PageView(
               controller: cubit.pageController,

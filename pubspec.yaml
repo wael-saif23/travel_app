@@ -124,6 +124,8 @@ flutter:
     - assets/images/png/
     - assets/images/svg/
     - assets/lang/
+    - assets/enigma_images/png/
+    - assets/enigma_images/svg/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see
@@ -186,6 +188,12 @@ flutter:
       fonts:
         - asset: assets/fonts/emblema_one/EmblemaOne-Regular.ttf
           weight: 400
+    - family: Segoe UI
+      fonts:
+        - asset: assets/fonts/Segoe UI/Segoe UI.ttf
+          weight: 400 
+        - asset: assets/fonts/Segoe UI/Segoe UI Bold.ttf
+          weight: 700       
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

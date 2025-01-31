@@ -54,7 +54,7 @@ class KAppRoutes {
       case tripDetailsView:
         return MaterialPageRoute(
             builder: (_) => BlocProvider(
-                  create: (context) => TripDetailsCubit()..loadeTripDetails(),
+                  create: (context) => TripDetailsCubit(),
                   child: const TripDetailsView(),
                 ));
       case bookingView:

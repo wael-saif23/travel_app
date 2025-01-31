@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:travel_app/core/extension/sizedbox_extention.dart';
 import '../../core/utils/app_text_styles.dart';
 import '../../res/colors.dart';
 import '../widgets.dart';
@@ -27,7 +29,12 @@ class CustomButton extends StatelessWidget {
     this.textColor,
     this.hieght,
     this.leadingIcon,
-    this.trailingIcon, this.leadingIconColor, this.trailingIconColor, this.leadingIconSize, this.trailingIconSize,
+    this.trailingIcon,
+    this.leadingIconColor,
+    this.trailingIconColor,
+    this.leadingIconSize,
+    this.trailingIconSize, this.leadingSvgPath,
+
   });
 
   final double? textSize;
@@ -55,6 +62,7 @@ class CustomButton extends StatelessWidget {
   final Color? trailingIconColor;
   final double? leadingIconSize;
   final double? trailingIconSize;
+  final String? leadingSvgPath;
 
   @override
   Widget build(BuildContext context) {
@@ -91,12 +99,18 @@ class CustomButton extends StatelessWidget {
             : Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  leadingIcon != null
-                      ? Icon(leadingIcon,
-                      
-                          size: leadingIconSize ?? 20.r,
-                          color: leadingIconColor ?? Colors.white)
-                      : Container(),
+                  leadingSvgPath != null
+                      ? SvgPicture.asset(leadingSvgPath!,
+                          height: 20.r,
+                          colorFilter: ColorFilter.mode(
+                              leadingIconColor ?? Colors.white,
+                              BlendMode.srcIn))
+                      : leadingIcon != null
+                          ? Icon(leadingIcon,
+                              size: leadingIconSize ?? 20.r,
+                              color: leadingIconColor ?? Colors.white)
+                          : SizedBox(),
+                         
                   Text(
                     text,
                     style: textStyle ??
@@ -107,7 +121,7 @@ class CustomButton extends StatelessWidget {
                       ? Icon(trailingIcon,
                           size: leadingIconSize ?? 20.r,
                           color: leadingIconColor ?? Colors.white)
-                      : Container(),
+                      : SizedBox(),
                 ],
               ),
       ),
