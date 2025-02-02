@@ -14,6 +14,7 @@ class ProfileImageWithAction extends StatelessWidget {
     required this.actionBackgroundRadius,
     this.actionChild,
     this.actionBackgroundColor,
+    this.isLoggedIn = true,
   });
 
   final String? networkUrlImage;
@@ -22,7 +23,7 @@ class ProfileImageWithAction extends StatelessWidget {
   final double actionBackgroundRadius;
   final Color? actionBackgroundColor;
   final Widget? actionChild;
-
+  final bool? isLoggedIn;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -43,8 +44,10 @@ class ProfileImageWithAction extends StatelessWidget {
           top: positionTop,
           child: CircleAvatar(
             radius: actionBackgroundRadius,
-            backgroundColor:
-                actionBackgroundColor ?? KAppENIColors.lighterGreenColor,
+            backgroundColor: actionBackgroundColor ??
+                (isLoggedIn == true
+                    ? KAppENIColors.lighterGreenColor
+                    : KAppENIColors.transparentColor),
             child: actionChild != null ? Center(child: actionChild) : null,
           ),
         )

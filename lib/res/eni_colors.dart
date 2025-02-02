@@ -10,4 +10,5 @@ class KAppENIColors {
   static const Color ligherBlackColor = Color(0xFF2D2929);
   static const Color greyColor = Color(0xFF707070);
   static const Color redcolor = Color(0xFFA10707);
+  static const Color transparentColor = Color(0x00000000);
 }

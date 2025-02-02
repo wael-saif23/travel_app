@@ -10,7 +10,7 @@ class ChatsViewBody extends StatelessWidget {
   const ChatsViewBody({
     super.key,
   });
-
+  final bool isChatsView = true;
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
@@ -25,7 +25,9 @@ class ChatsViewBody extends StatelessWidget {
           Expanded(
             child: CustomScrollView(
               slivers: [
-                SliverToBoxAdapter(),
+                SliverToBoxAdapter(
+                
+                ),
               ],
             ),
           ),

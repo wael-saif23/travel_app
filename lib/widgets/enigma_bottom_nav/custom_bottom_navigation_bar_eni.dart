@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:travel_app/core/extension/context_extensions.dart';
 import 'package:travel_app/features/bottom_nav/model/item_nav_bar_model.dart';
 import 'package:travel_app/features/enigma_bottom_nav/enigma_bottom_nav_cubit/enigma_bottom_nav_cubit.dart';
 import 'package:travel_app/res/eni_colors.dart';
@@ -39,7 +40,7 @@ class CustomBottomNavigationBarEni extends StatelessWidget {
           final item = _navItems[index];
           return BottomNavItemEni(
             itemNumber: _navItems.length,
-            label: item.label,
+            label:context.translate(item.label),
             iconUnselected: item.iconUnselected,
             iconSelected: item.iconSelected,
             isSelected: currentIndex == index,
