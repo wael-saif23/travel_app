@@ -38,7 +38,7 @@ class KAppSvgsEni {
   static const String cameraIcon = 'assets/enigma_images/svg/camera_icon.svg';
   static const String addFriendIcon =
       'assets/enigma_images/svg/add_friend_icon.svg';
-       static const String editPenIcon =
+  static const String editPenIcon =
       'assets/enigma_images/svg/edit_pen_icon.svg';
 }
 
@@ -49,5 +49,19 @@ class KAppPngsEni {
       'assets/enigma_images/png/Profile_Picture_example.png';
   static const String qrCodeIcon = 'assets/enigma_images/png/qr_code_icon.png';
   static const String deletIcon = 'assets/enigma_images/png/delete_icon.png';
-  static const String bigSearchIcon = 'assets/enigma_images/png/big_search_icon.png';
+  static const String bigSearchIcon =
+      'assets/enigma_images/png/big_search_icon.png';
+  //////////////////////
+  // contacts user images
+  static const String jasikaaaaImage = 'assets/enigma_images/png/Jasikaaaa.png';
+  static const String jasmeennnImage = 'assets/enigma_images/png/Jasmeennn.png';
+  static const String ziadMeziedImage =
+      'assets/enigma_images/png/Ziad Mezied.png';
+  static const String ayaAhmedImage = 'assets/enigma_images/png/Aya Ahmed.png';
+  static const String yasmeenAdelImage =
+      'assets/enigma_images/png/Yasmeen Adel.png';
+  static const String hasokshaaaaImage =
+      'assets/enigma_images/png/Hasokshaaaa.png';
+  static const String esraaAymanImage =
+      'assets/enigma_images/png/Esraa Ayman.png';
 }

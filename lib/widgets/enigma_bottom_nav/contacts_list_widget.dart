@@ -14,92 +14,108 @@ class ContactsListWidget extends StatelessWidget {
   const ContactsListWidget(
       {super.key,
       required this.contactsList,
-      required this.contactInfo,
-      required this.isChatsView});
+      required this.isChatsView,
+      required this.index});
   final bool isChatsView;
-  final UserInfoModel contactInfo;
   final List<UserInfoModel> contactsList;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 22),
-      child: ListTile(
-        leading: ProfileImageWithAction(
-          isLoggedIn: contactInfo.isLoggedIn,
-          positionBottom: 0,
-          positionRight: 0,
-          imageRadius: 25.r,
-          actionBackgroundRadius: 5.r,
-        ),
-        title: Text(
-          contactInfo.name ?? "",
-          style: KAppTextStyleEni.segoeUIRegular13,
-        ),
-        subtitle: isChatsView
-            ? Text(
-                contactInfo.lastMessage ?? "",
-                style: KAppTextStyleEni.segoeUIsemibold11GrayOpacity
-                    .copyWith(fontSize: 12),
-              )
-            : Text(
-                contactInfo.userStatus?.toStringValue() ?? "",
-                style: KAppTextStyleEni.segoeUIsemibold11GrayOpacity
-                    .copyWith(fontSize: 12),
-              ),
-        trailing: isChatsView
-            ? SizedBox(
-                height: 50.h,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    contactInfo.lastMessageTime != null
-                        ? Text(formatTime(contactInfo.lastMessageTime!),
-                            style: contactInfo.unreedMessageCount != null
-                                ? KAppTextStyleEni.segoeUIRegular13
-                                    .copyWith(fontSize: 10)
-                                : KAppTextStyleEni.segoeUIRegular11Gray
-                                    .copyWith(fontSize: 10))
-                        : SizedBox(),
-                    9.sH,
-                    contactInfo.unreedMessageCount != null
-                        ? CircleAvatar(
-                            radius: 10.r,
-                            backgroundColor: KAppENIColors.primaryColor,
-                            child: Text(
-                              contactInfo.unreedMessageCount != null
-                                  ? contactInfo.unreedMessageCount.toString()
-                                  : '',
-                              style: KAppTextStyleEni.segoeUIsemibold14
-                                  .copyWith(fontSize: 8),
-                            ),
-                          )
-                        : SizedBox(
-                            height: 10.h,
-                          )
-                  ],
-                ),
-              )
-            : SizedBox(
-                width: 81.w,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    CircleButtonWithIcon(
-                      onTap: () {},
-                      svgiconPath: KAppSvgsEni.chatsUnselectedIcon,
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 22),
+          child: ListTile(
+            leading: ProfileImageWithAction(
+              imageAssetPng: contactsList[index].imageUrl ?? "",
+              isLoggedIn: contactsList[index].isLoggedIn,
+              positionBottom: 0,
+              positionRight: 0,
+              imageRadius: 25.r,
+              actionBackgroundRadius: 5.r,
+            ),
+            title: Text(
+              contactsList[index].name ?? "",
+              style: KAppTextStyleEni.segoeUIRegular13,
+            ),
+            subtitle: isChatsView
+                ? Text(
+                    contactsList[index].lastMessage ?? "",
+                    style: KAppTextStyleEni.segoeUIsemibold11GrayOpacity
+                        .copyWith(fontSize: 12),
+                  )
+                : Text(
+                    contactsList[index].userStatus?.toStringValue() ?? "",
+                    style: KAppTextStyleEni.segoeUIsemibold11GrayOpacity
+                        .copyWith(fontSize: 12),
+                  ),
+            trailing: isChatsView
+                ? SizedBox(
+                    height: 50.h,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        contactsList[index].lastMessageTime != null
+                            ? Text(
+                                formatTime(
+                                    contactsList[index].lastMessageTime!),
+                                style: contactsList[index].unreedMessageCount !=
+                                        null
+                                    ? KAppTextStyleEni.segoeUIRegular13
+                                        .copyWith(fontSize: 10)
+                                    : KAppTextStyleEni.segoeUIRegular11Gray
+                                        .copyWith(fontSize: 10))
+                            : SizedBox(),
+                        9.sH,
+                        contactsList[index].unreedMessageCount != null
+                            ? CircleAvatar(
+                                radius: 10.r,
+                                backgroundColor: KAppENIColors.primaryColor,
+                                child: Text(
+                                  contactsList[index].unreedMessageCount != null
+                                      ? contactsList[index]
+                                          .unreedMessageCount
+                                          .toString()
+                                      : '',
+                                  style: KAppTextStyleEni.segoeUIsemibold14
+                                      .copyWith(fontSize: 8),
+                                ),
+                              )
+                            : SizedBox(
+                                height: 10.h,
+                              )
+                      ],
                     ),
-                    17.sW,
-                    CircleButtonWithIcon(
-                      onTap: () {},
-                      pngiconPath: KAppPngsEni.deletIcon,
+                  )
+                : SizedBox(
+                    width: 81.w,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        CircleButtonWithIcon(
+                          onTap: () {},
+                          svgiconPath: KAppSvgsEni.chatsUnselectedIcon,
+                        ),
+                        17.sW,
+                        CircleButtonWithIcon(
+                          onTap: () {},
+                          pngiconPath: KAppPngsEni.deletIcon,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
-      ),
+                  ),
+          ),
+        ),
+        contactsList.length - 1 == index
+            ? SizedBox()
+            : Divider(
+                height: 22.h,
+                color: KAppENIColors.greyColor,
+                endIndent: 24.w,
+                indent: 24.w,
+              )
+      ],
     );
   }
 }
-
-

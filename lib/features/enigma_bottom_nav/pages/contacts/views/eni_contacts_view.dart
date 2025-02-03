@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:travel_app/core/extension/sizedbox_extention.dart';
 import 'package:travel_app/data/model/enigma_app_models/user_info_model.dart';
 import 'package:travel_app/features/enigma_bottom_nav/enigma_bottom_nav_cubit/enigma_bottom_nav_cubit.dart';
@@ -12,7 +11,6 @@ import 'package:travel_app/widgets/enigma_bottom_nav/custom_appbar_eni_app.dart'
 
 class EniContactsView extends StatelessWidget {
   const EniContactsView({super.key});
-
   get networkUrlImage => null;
 
   @override
@@ -33,33 +31,20 @@ class EniContactsView extends StatelessWidget {
           ),
           31.sH,
           Expanded(
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: 16.h,
-              ),
-              child: CustomScrollView(
-                slivers: [
-                  SliverList.builder(
-                      itemCount: contactsList.length,
-                      itemBuilder: (context, index) => Column(
-                            children: [
-                              ContactsListWidget(
-                                isChatsView: false,
-                                contactsList: contactsList,
-                                contactInfo: contactsList[index],
-                              ),
-                              contactsList.length - 1 == index
-                                  ? SizedBox()
-                                  : Divider(
-                                      height: 22.h,
-                                      color: KAppENIColors.greyColor,
-                                      endIndent: 24.w,
-                                      indent: 24.w,
-                                    )
-                            ],
-                          )),
-                ],
-              ),
+            child: CustomScrollView(
+              slivers: [
+                SliverList.builder(
+                    itemCount: contactsList.length,
+                    itemBuilder: (context, index) => Column(
+                          children: [
+                            ContactsListWidget(
+                              isChatsView: false,
+                              contactsList: contactsList,
+                              index: index,
+                            ),
+                          ],
+                        )),
+              ],
             ),
           ),
         ],

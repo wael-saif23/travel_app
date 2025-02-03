@@ -1,6 +1,7 @@
 import 'package:travel_app/core/enums/user_status.dart';
 
 class UserInfoModel {
+  final int id;
   final String? name;
   final String? email;
   final int? phoneNumber;
@@ -13,6 +14,7 @@ class UserInfoModel {
   final List<UserInfoModel>? contacts;
 
   UserInfoModel({
+    required this.id,
     this.name,
     this.email,
     this.phoneNumber,

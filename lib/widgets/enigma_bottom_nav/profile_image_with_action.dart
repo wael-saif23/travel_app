@@ -14,7 +14,7 @@ class ProfileImageWithAction extends StatelessWidget {
     required this.actionBackgroundRadius,
     this.actionChild,
     this.actionBackgroundColor,
-    this.isLoggedIn = true,
+    this.isLoggedIn = true, this.imageAssetPng,
   });
 
   final String? networkUrlImage;
@@ -24,6 +24,7 @@ class ProfileImageWithAction extends StatelessWidget {
   final Color? actionBackgroundColor;
   final Widget? actionChild;
   final bool? isLoggedIn;
+  final String? imageAssetPng;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -35,7 +36,7 @@ class ProfileImageWithAction extends StatelessWidget {
               // امكانية اضافة الصورة من الانترنت  - مهم اضافتها
               // اذا لم تكن موجوده يكون فيه صورة استندر
               ? NetworkImage(networkUrlImage!)
-              : AssetImage(KAppPngsEni.profilePictureExample),
+              : AssetImage(imageAssetPng ?? KAppPngsEni.profilePictureExample),
         ),
         Positioned(
           bottom: positionBottom,
