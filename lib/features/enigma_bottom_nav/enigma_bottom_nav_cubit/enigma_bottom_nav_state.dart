@@ -22,3 +22,4 @@ class NavigationRestored extends EnigmaBottomNavState {
 
   NavigationRestored(this.restoredIndex);
 }
+

@@ -15,10 +15,12 @@ class ContactsListWidget extends StatelessWidget {
       {super.key,
       required this.contactsList,
       required this.isChatsView,
-      required this.index});
+      required this.index, this.onDeleteContact, this.onChatWithContact});
   final bool isChatsView;
   final List<UserInfoModel> contactsList;
   final int index;
+  final VoidCallback? onDeleteContact;
+  final VoidCallback? onChatWithContact;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class ContactsListWidget extends StatelessWidget {
               actionBackgroundRadius: 5.r,
             ),
             title: Text(
-              contactsList[index].name ?? "",
+              contactsList[index].name ,
               style: KAppTextStyleEni.segoeUIRegular13,
             ),
             subtitle: isChatsView
@@ -46,7 +48,7 @@ class ContactsListWidget extends StatelessWidget {
                         .copyWith(fontSize: 12),
                   )
                 : Text(
-                    contactsList[index].userStatus?.toStringValue() ?? "",
+                    contactsList[index].userStatus.toStringValue(),
                     style: KAppTextStyleEni.segoeUIsemibold11GrayOpacity
                         .copyWith(fontSize: 12),
                   ),
@@ -56,26 +58,26 @@ class ContactsListWidget extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        contactsList[index].lastMessageTime != null
-                            ? Text(
+                       if( contactsList[index].lastMessageTime != null)
+                             Text(
                                 formatTime(
                                     contactsList[index].lastMessageTime!),
-                                style: contactsList[index].unreedMessageCount !=
+                                style: contactsList[index].unreadMessageCount !=
                                         null
                                     ? KAppTextStyleEni.segoeUIRegular13
                                         .copyWith(fontSize: 10)
                                     : KAppTextStyleEni.segoeUIRegular11Gray
                                         .copyWith(fontSize: 10))
-                            : SizedBox(),
+                            ,
                         9.sH,
-                        contactsList[index].unreedMessageCount != null
+                        contactsList[index].unreadMessageCount != null
                             ? CircleAvatar(
                                 radius: 10.r,
                                 backgroundColor: KAppENIColors.primaryColor,
                                 child: Text(
-                                  contactsList[index].unreedMessageCount != null
+                                  contactsList[index].unreadMessageCount != null
                                       ? contactsList[index]
-                                          .unreedMessageCount
+                                          .unreadMessageCount
                                           .toString()
                                       : '',
                                   style: KAppTextStyleEni.segoeUIsemibold14
@@ -94,12 +96,12 @@ class ContactsListWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         CircleButtonWithIcon(
-                          onTap: () {},
+                          onTap: onChatWithContact,
                           svgiconPath: KAppSvgsEni.chatsUnselectedIcon,
                         ),
                         17.sW,
                         CircleButtonWithIcon(
-                          onTap: () {},
+                          onTap: onDeleteContact,
                           pngiconPath: KAppPngsEni.deletIcon,
                         ),
                       ],

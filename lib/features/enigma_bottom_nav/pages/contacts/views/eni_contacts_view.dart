@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_app/core/extension/sizedbox_extention.dart';
-import 'package:travel_app/data/model/enigma_app_models/user_info_model.dart';
-import 'package:travel_app/features/enigma_bottom_nav/enigma_bottom_nav_cubit/enigma_bottom_nav_cubit.dart';
+import 'package:travel_app/features/enigma_bottom_nav/contacts_cubit/contacts_cubit.dart';
 import 'package:travel_app/res/eni_assets.dart';
 import 'package:travel_app/res/eni_colors.dart';
 import 'package:travel_app/widgets/customs/scaffold_pattern.dart';
@@ -15,8 +14,6 @@ class EniContactsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<UserInfoModel> contactsList =
-        BlocProvider.of<EnigmaBottomNavCubit>(context).contacts;
     return ScaffoldPattern(
       appBarBackgroundColor: KAppENIColors.blackColor,
       statusBarIsLight: false,
@@ -31,20 +28,37 @@ class EniContactsView extends StatelessWidget {
           ),
           31.sH,
           Expanded(
-            child: CustomScrollView(
-              slivers: [
-                SliverList.builder(
-                    itemCount: contactsList.length,
-                    itemBuilder: (context, index) => Column(
+            child: BlocBuilder<ContactsCubit, ContactsState>(
+              builder: (context, state) {
+                if (state is ContactsLoading) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (state is ContactsLoaded) {
+                  return CustomScrollView(
+                    slivers: [
+                      SliverList.builder(
+                        itemCount: state.contacts.length,
+                        itemBuilder: (context, index) => Column(
                           children: [
                             ContactsListWidget(
                               isChatsView: false,
-                              contactsList: contactsList,
+                              contactsList: state.contacts,
                               index: index,
+                              onDeleteContact: () {
+                                final cubit = context.read<ContactsCubit>();
+                                cubit.deleteContact(state.contacts[index].id);
+                              },
                             ),
                           ],
-                        )),
-              ],
+                        ),
+                      ),
+                    ],
+                  );
+                } else if (state is ContactsError) {
+                  return Center(child: Text(state.message));
+                } else {
+                  return const Center(child: Text("Unknown state"));
+                }
+              },
             ),
           ),
         ],

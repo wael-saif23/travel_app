@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_app/features/bottom_nav/model/item_nav_bar_model.dart';
+import 'package:travel_app/features/enigma_bottom_nav/contacts_cubit/contacts_cubit.dart';
 import 'package:travel_app/features/enigma_bottom_nav/enigma_bottom_nav_cubit/enigma_bottom_nav_cubit.dart';
 import 'package:travel_app/features/enigma_bottom_nav/pages/chats/views/enigma_chats_view.dart';
 import 'package:travel_app/features/enigma_bottom_nav/pages/contacts/views/eni_contacts_view.dart';
@@ -33,8 +34,15 @@ class MainNavViewEni extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => EnigmaBottomNavCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => EnigmaBottomNavCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ContactsCubit()..loadContacts(),
+        ),
+      ],
       child: BlocBuilder<EnigmaBottomNavCubit, EnigmaBottomNavState>(
         builder: (context, state) {
           final cubit = context.read<EnigmaBottomNavCubit>();
